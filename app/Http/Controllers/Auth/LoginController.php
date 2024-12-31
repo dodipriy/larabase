@@ -7,8 +7,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Libraries\Asmanager;
-use App\Libraries\Asterisk;
 use App\Models\Setting;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;

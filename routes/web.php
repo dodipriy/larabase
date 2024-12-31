@@ -1,10 +1,5 @@
 <?php
 
-use App\Http\Controllers\ApiDocController;
-
-use App\Http\Controllers\AgiController;
-use App\Http\Controllers\Generator\CategoryController;
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
