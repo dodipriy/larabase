@@ -5,7 +5,7 @@
 ## About Larabase
 
 ## Whats Inside
-- Ubold Admin UI
+- Vuexy Admin UI
 - Boostrapt 5
 - Yajra Datatables (https://github.com/yajra/laravel-datatables)
 - Bootstrap Fileinput (https://github.com/kartik-v/bootstrap-fileinput)
