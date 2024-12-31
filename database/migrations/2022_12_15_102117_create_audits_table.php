@@ -21,8 +21,6 @@ class CreateAuditsTable extends Migration
             $table->bigIncrements('id');
             $table->string($morphPrefix . '_type')->nullable();
             $table->unsignedBigInteger($morphPrefix . '_id')->nullable();
-//            $table->uuid('auditable_id');
-//            $table->string('auditable_type');
             $table->index([
                 'auditable_id',
                 'auditable_type',
@@ -38,7 +36,11 @@ class CreateAuditsTable extends Migration
             $table->string('tags')->nullable();
             $table->timestamps();
 
-//            $table->index([$morphPrefix . '_id', $morphPrefix . '_type']);
+        });
+
+        Schema::table('audits', function (Blueprint $table) {
+            $table->string('auditable_id')->change();
+            $table->string('user_id')->change();
         });
     }
 
