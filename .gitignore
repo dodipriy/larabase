@@ -30,4 +30,12 @@ Homestead.json
 auth.json
 
 
+storage/logs/*
+storage/debugbar/*
+storage/framework/sessions/*
+storage/framework/views/*
+storage/framework/cache/*
+
+
+
 .idea/*
