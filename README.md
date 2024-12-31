@@ -1,0 +1,2 @@
+# larabase
+Laravel base application
