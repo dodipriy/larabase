@@ -163,18 +163,41 @@ class lbaseGenerator extends Command
                         required: true,
                     },\n                    ";
 
-                $strTableForm .= " <div class='mb-3'>
+                switch ($val)
+                {
+                    case 'string':
+                        $strTableForm .= " <div class='mb-3'>
                         <label class='form-label' for='$key'>".ucwords($key)."</label>
                         <input type='text' id='$key' name='$key' class='form-control' placeholder='".ucfirst($key)."'>
                     </div>";
-                /*$strTableForm .= "<fieldset class='form-group floating-label-form-group'>
-                    <label for='$key'>".ucwords($key)."</label>
-                    <div class='controls'>
-                        <input type='text' class='form-control' id='$key' name='$key'
-                               placeholder='".ucfirst($key)."' required
-                               data-validation-required-message='This field is required'>
-                    </div>
-                </fieldset>\n                 ";*/
+                        break;
+                    case 'text':
+                        $strTableForm .= " <div class='mb-3'>
+                        <label class='form-label' for='$key'>".ucwords($key)."</label>
+                        <textarea id='$key' name='$key' class='form-control' placeholder='".ucfirst($key)."'></textarea>
+                    </div>";
+                        break;
+                    case 'integer':
+                        $strTableForm .= " <div class='mb-3'>
+                        <label class='form-label' for='$key'>".ucwords($key)."</label>
+                        <input type='text' id='$key' name='$key' class='form-control number-only' placeholder='".ucfirst($key)."'>
+                    </div>";
+                        break;
+                    case 'date':
+                        $strTableForm .= " <div class='mb-3'>
+                        <label class='form-label' for='$key'>".ucwords($key)."</label>
+                        <div class='input-group'>
+                            <span id='basic-default-password2' class='input-group-text cursor-pointer'><i class='ti ti-calendar-event'></i></span>
+                            <input type='text' class='form-control date' placeholder='".ucfirst($key)."' id='$key' name='$key' readonly >
+                        </div>
+                    </div>";
+                        break;
+                    default:
+                        $strTableForm .= " <div class='mb-3'>
+                        <label class='form-label' for='$key'>".ucwords($key)."</label>
+                        <input type='text' id='$key' name='$key' class='form-control number-only' placeholder='".ucfirst($key)."'>
+                    </div>";
+                }
             }
 
             $viewsTemplate = str_replace(

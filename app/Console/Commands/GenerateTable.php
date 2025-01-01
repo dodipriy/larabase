@@ -32,8 +32,8 @@ class GenerateTable
 
             if (is_numeric($numberColumn))
             {
-               $arrColumn = $this->inputColumn($numberColumn);
-               $column = $this->generateColumn($arrColumn);
+                $arrColumn = $this->inputColumn($numberColumn);
+                $column = $this->generateColumn($arrColumn);
 
                 $migrationTemplate = str_replace(
                     [
@@ -52,7 +52,8 @@ class GenerateTable
                     file_get_contents(resource_path("stubs/Migration.stub"))
 
                 );
-                $filename = date("Y_m_d",time()).'_000000'."_create_".strtolower(Str::plural($name))."_table.php";
+                $filename = date("Y_m_d",time()).'_'.date("His")."_create_".strtolower(Str::plural($name))."_table.php";
+
                 file_put_contents(base_path("database/migrations/$filename"), $migrationTemplate);
 
                 Artisan::call('migrate');
@@ -71,14 +72,14 @@ class GenerateTable
 
         for ($i = 1 ; $i <= $numberColumn; $i++)
         {
-           $columnName = $this->command->ask("$i. Column Name?");
+            $columnName = $this->command->ask("$i. Column Name?");
 
-           $columnType = $this->command->choice(
+            $columnType = $this->command->choice(
                 "$i. Type For Column $columnName?",
                 ['integer', 'string', 'text', 'date','timestamp', 'uuid']
             );
 
-           $arrResult[$columnName] = $columnType;
+            $arrResult[$columnName] = $columnType;
         }
 
 

@@ -198,6 +198,7 @@ function formDisable() {
 }
 
 function formEnable() {
+    $("#formModal textarea").removeAttr("disabled", true);
     $("#formModal input").removeAttr("disabled", true);
     $("#formModal select").removeAttr("disabled", true);
     $("#formModal button").removeAttr("disabled", true);
