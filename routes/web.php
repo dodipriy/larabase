@@ -88,8 +88,3 @@ Route::group(['prefix' => 'administrator', 'middleware' => ['auth', 'roles']], f
         Route::get('/administrator/permission', [MenuController::class, 'index'])->name('dashboard_permission');
     });
 });
-
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
