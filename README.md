@@ -15,7 +15,7 @@ Include simple Data Table (CRUD).
 
 | Feature | Status |
 | --- | --- |
-| Bootstrap Ubold Admin Themes | OK |
+| Vuexy Admin Themes | OK |
 | Auth Scaffolding | OK |
 | Roles & Permissions | OK |
 | Sweet Alert JS | OK |
@@ -30,7 +30,7 @@ Include simple Data Table (CRUD).
 ## Installation
 ### First clone or download this repository
 ```shell
-git clone https://gitlab.com/dodipriyanto/larabasev2.git
+git clone https://github.com/dodipriy/larabase.git
 ```
 
 After clone or download this repository, next step is install all dependency required by laravel and laravel-mix.
